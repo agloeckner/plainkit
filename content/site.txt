@@ -1,1 +1,66 @@
-Title: Site Title
+Title: Who's got Soul
+
+----
+
+Subtitle: 
+
+----
+
+Subtext: 
+
+----
+
+Service: 
+
+----
+
+Headline: Who's got Soul
+
+----
+
+Sub-head: Win a Record Contract and 50.000 EUR
+
+----
+
+Button-1:
+
+type: page
+value: registration
+
+----
+
+Button-2:
+
+type: page
+value: voting
+
+----
+
+Social:
+
+- 
+  title: Twitter
+  link: ""
+  category: svg
+  svg: ""
+  image: [ ]
+- 
+  title: Facebook
+  link: ""
+  category: svg
+  svg: ""
+  image: [ ]
+- 
+  title: Instagram
+  link: ""
+  category: svg
+  svg: ""
+  image: [ ]
+
+----
+
+Seotitle: 
+
+----
+
+Seodescription: 

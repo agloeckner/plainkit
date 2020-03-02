@@ -1,3 +1,158 @@
 title: Site
-preset: pages
-unlisted: true
+
+tabs:
+
+  # content tab
+  website:
+    icon: template  
+    columns:
+      main:
+        width: 1/2
+        sections:
+          themen:
+            type: pages
+            status: listed
+            # layout: cards
+            image:
+              cover: true
+            info: "{{ page.template }}"
+            # template:
+            #   - overview
+            #   - blog
+          legal:
+            type: pages
+            status: listed
+            info: "{{ page.template }}"
+            template:
+              - legal
+
+          firma:
+            type: pages
+            status: listed
+            info: "{{ page.template }}"
+            template:
+              - legal
+              - contact
+              - home
+
+          forms:
+            type: pages
+            info: "{{ page.template }}"
+            template:
+              - form
+
+          draft:
+            headline: Entwürfe
+            type: pages
+            status: draft
+
+          settings:
+            type: pages
+            status: unlisted
+            info: "{{ page.template }}"
+
+
+      sidebar:
+        width: 1/2
+        sections:
+
+          subdata:
+            type: fields
+            fields:
+              subtitle:
+                type: text
+              subtext:
+                type: textarea
+
+          service:
+            type: fields
+            fields:
+              service:
+                type: structure
+                width: 1/1
+                fields:
+                  name:
+                    type: text
+                  tags:
+                    type: tags
+                    options: query
+                    query: site.index.pluck("list", ",", true)                
+                  fieldlink:
+                    type: link
+
+  settings:
+    icon: settings
+    columns:
+      main:
+        width: 2/3  
+        fields:
+          headline:
+            type: text
+          sub_head:
+            type: text
+          button_1:
+            type: link
+          button_2:
+            type: link
+
+      sidebar:
+        width: 1/3  
+        sections:
+          cover:
+            type: files
+            template: cover
+            layout: cards
+            info: "{{ file.dimensions }} <br> {{ file.alt }}"
+          gallery:
+            type: files
+            template: image
+            layout: cards
+            info: "{{ file.dimensions }}"
+          files:
+            type: files
+            template: document
+
+
+  social:
+    icon: twitter
+    fields:
+      social:
+        type: structure
+        fields:
+          title:
+            type: text
+            width: 1/2
+          link:
+            type: url
+            width: 1/2
+          category:
+            type: radio
+            default: svg
+            options:
+              - svg
+              - image
+          svg:
+            type: text
+            when:
+              category: svg
+          image:
+            type: files
+            when:
+              category: image
+
+  seo:
+    icon: search
+    columns:
+      main:
+        width: 1/1
+        sections:
+          seo:
+            type: fields
+            headline: seo
+            fields:
+              seoTitle:
+                label: SEO Title
+                type: text
+              seoDescription:
+                label: SEO Description
+                type: text
